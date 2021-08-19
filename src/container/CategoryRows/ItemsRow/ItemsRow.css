@@ -1,0 +1,17 @@
+.itemsRow {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.itemsRow__Title {
+  text-transform: capitalize;
+}
+.itemsRow__products {
+  display: flex;
+  margin-top: 1.5rem;
+  overflow-x: auto;
+  padding: 10px;
+}
+.itemsRow__product {
+  margin: 1.5rem;
+  cursor: pointer;
+}

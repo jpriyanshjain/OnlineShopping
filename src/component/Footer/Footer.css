@@ -1,0 +1,65 @@
+.footer {
+  background-color: #181813;
+  color: #f9f9f9;
+  padding: 2rem;
+}
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__info--newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__info--newsletter--input {
+  background-color: #292929;
+  border: none;
+  padding: 8px;
+  color: #f9f9f9;
+  border-radius: 7px;
+}
+
+.footer__socalMedia {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.footer__socalMedia--icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__socalMedia--icons--icon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.footer__policy {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.footer__termsAndConditions {
+  cursor: pointer;
+}
+.footer__copyright {
+  margin-top: 0.5rem;
+}
+@media (min-width: 550px) {
+  .footer__info,
+  .footer__policy {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .footer__socalMedia {
+    margin: 0;
+  }
+  .footer__info--newsletter--text {
+    margin-right: 1rem;
+  }
+}
