@@ -1,8 +1,8 @@
-import {useBannerProduct} from "../../context/ProductsContext"
+import {useAllCategories} from "../../context/ProductsContext"
 import ItemsRow from "./ItemsRow/ItemsRow";
 
 function ItemRows() {
-    const {categories} = useBannerProduct(); 
+    const {categories} = useAllCategories(); 
     
     return (
         <div className="itemRows">

@@ -1,4 +1,3 @@
-// import Button from "../../component/UI/Button/Button"
 import "./Product.css"
 
 function Product({productItem}) {

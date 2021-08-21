@@ -1,29 +1,26 @@
-import axios from 'axios'
 import { useState,useEffect } from 'react';
 import Product from "../../../component/Product/Product"
 import "./ItemsRow.css"
 import {useHistory } from "react-router-dom"
+import axios from "../../../axios"
 
 function ItemsRow({category} ) {
     const [products , setProducts] = useState([]);
-    let history = useHistory()
+    let history = useHistory();
     useEffect(() =>{
-        axios({
-            method: "GET",
-            url : `https://fakestoreapi.com/products/category/${category}`,
-        }).then(res => {setProducts(res.data)
-            // console.log(res.data);
-        });
+            const getCategories = async () => {
+                await axios.get(`category/${category}`)
+                .then(res=>setProducts(res.data))
+            }
+            getCategories();
     },[category]);
     const produckClickHandler = ( id) => {
         history.push("/product/" + id)
-
     }
-  
+      
     return (
         <div className="itemsRow">
             <h2 className="itemsRow__Title">{category}</h2>
-            {/* container */}
             <div className="itemsRow__products">
                 {
                     products?.map( (product,idx) => (

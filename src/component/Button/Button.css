@@ -9,6 +9,11 @@
   border: none;
   font-weight: 600;
 }
+.button__nav {
+  width: 60px;
+  height: 30px;
+  font-size: 8px;
+}
 @media (min-width: 550px) {
   .button__btn {
     width: 210px;

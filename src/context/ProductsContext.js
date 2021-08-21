@@ -1,26 +1,34 @@
 import React,{createContext , useContext,useState, useEffect } from "react";
+import axios from "../axios";
 
-const BannerProduct = createContext();
-export const useBannerProduct = () => useContext(BannerProduct);
+const AllCategories = createContext();
+export const useAllCategories = () => useContext(AllCategories);
 
+const ShowBackDrop = createContext();
+export const useBackDrop = () => useContext(ShowBackDrop)
 
 function ProductContextProvider ({children}){
     const [categories , setCategories] = useState([]);
     const [error, setError] = useState(false);
+    const [category, setCategory] = useState("Category");
+    const [showBackDrop , setShowBackDrop] = useState(false);
     useEffect(() => {
        const getCategories = async () => {
-           await fetch('https://fakestoreapi.com/products/categories')
-           .then(res=>res.json())
-           .then(json=>setCategories(json))
+           await axios.get('categories')
+           .then(res=>setCategories(res.data))
+           .catch(err => setError(err))
        }
        getCategories();
      },[]);
-     const value = {categories , setCategories}
+     const categoryValue = {categories , setCategories,category, setCategory};
+     const backDrop = {showBackDrop , setShowBackDrop};
     
     return (
-        <BannerProduct.Provider value={value} >
+        <AllCategories.Provider value={categoryValue} >
+            <ShowBackDrop.Provider value={backDrop} >
             {children}
-        </BannerProduct.Provider>
+            </ShowBackDrop.Provider>
+        </AllCategories.Provider>
     )
 }
 

@@ -1,25 +1,24 @@
 import {useEffect,useState} from "react"
 import {useParams} from "react-router-dom"
-import axios from "axios";
+import axios from "../../axios";
 import "./FullProduct.css"
 import Button from "../../component/Button/Button"
+
 function FullProduct() {
     let prams = useParams();
     const [product, setProduct] = useState({});
     const [loading,setLoading] = useState(true);
-    // console.log(prams.id);
     useEffect(() =>{
-        axios({
-            method: "GET",
-            url : `https://fakestoreapi.com/products/${prams.id}`,
-        }).then(res => {
-            setProduct(res.data);
-            setLoading(false);
-            console.log(res.data);
-
-        });
+        const getCategories = async () => {
+            await axios.get(prams.id)
+            .then(res => {
+                setProduct(res.data);
+                setLoading(false);
+            });
+        }
+        getCategories();
     },[prams.id]);
-    let ProductBody = <p>Loading...</p>;
+    let ProductBody = <p className="fullproduct__loading">Loading...</p>;
     if(!loading){
        ProductBody = (
      <div className="fullProduct__des">

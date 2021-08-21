@@ -39,6 +39,9 @@
 .navbar__btns {
   display: none;
 }
+.fullproduct__loading {
+  margin: 10rem;
+}
 @media (min-width: 550px) {
   .navbar__menu {
     display: none;
@@ -64,10 +67,14 @@
   }
   .navbar__btns--dropdown {
     background-color: #ffb338;
-    width: 110px;
+    width: 150px;
     height: 30px;
     font-size: 12px;
     border-radius: 50px;
     padding: 0 10px;
+  }
+  .navbar__btns--dropdown--optons {
+    font-size: 18px;
+    padding: 1rem;
   }
 }
