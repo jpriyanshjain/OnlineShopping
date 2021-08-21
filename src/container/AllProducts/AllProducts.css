@@ -1,0 +1,31 @@
+.allProducts {
+  margin: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.allProducts__product {
+  margin: 1rem;
+  cursor: pointer;
+}
+.allProducts__error {
+  color: red;
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 550px) {
+  .allProducts {
+    margin: 4rem auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .allProducts__error {
+    height: 70vh;
+  }
+}

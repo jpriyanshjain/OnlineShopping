@@ -1,0 +1,43 @@
+.login {
+  margin: 4rem auto;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 2px 3px #ccc;
+  border: 1px solid #eee;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+.login__form {
+  margin: 1rem 0;
+}
+.login__form--username {
+  margin: 1rem 0;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.login__field {
+  padding: 1px;
+  margin: 0 1px;
+}
+.login__signupbtn {
+  margin-top: 2rem;
+}
+@media (min-width: 600px) {
+  .login {
+    margin: 4rem auto;
+    width: 500px;
+    height: 70vh;
+  }
+  .login__field {
+    margin: 2rem;
+  }
+}
